@@ -1,0 +1,338 @@
+:root {
+    --card-bg: #f9f9f9;
+    --hover-bg: #d4390a;
+    --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    --transition-timing: 0.3s ease;
+    --scale-normal: 1;
+    --scale-hover: 1.05;
+    --general-bg-color: #f0f0f0;
+    --border-color: #d7d7d7;
+    --card-border-radius: 0.5rem;
+    --main-border-radius: 2rem;
+    --button-padding: 0.2rem 3rem;
+    --hero-text: 32px;
+    --body-text: 16px;
+    --caption-text: 18px;
+    --gap: 2rem;
+    --card-gap: 1rem;
+    --black: #1e1e1e;
+    --white: #fff;
+    --gray: #3d3c3c;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 3rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--general-bg-color);
+    border-radius: var(--main-border-radius);
+
+}
+
+
+.caption{
+    background-color: #f3e6e2;
+    padding: var(--button-padding);
+    border-radius: var(--card-border-radius);
+    margin-block-end: 2rem;
+}
+
+.caption p{
+    font-weight: 600;
+    font-size: var(--caption-text);
+    padding: 8px;
+
+}
+
+
+.hero-text h2{
+    font-size: var(--hero-text);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    animation: textAnimate 1s ease-in-out forwards;
+}
+
+/* Keyframe animations for the text */
+@keyframes textAnimate {
+    from{
+        transform: translatex(2rem);
+        color: #fff;
+        font-size: 0.5rem;
+    }
+
+    to{
+        transform: translateY(0);
+        color: #1e1e1e;
+        font-size: 2rem;
+    }
+}
+
+.hero-text p{
+    font-weight: 400;
+    font-size: var(--body-text);
+    text-align: center;
+    line-height: 24px;
+    margin-block-end: 2rem;
+    color: #9e9d9d;
+}
+
+.plans {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    column-gap: var(--gap);
+    width: 100%;
+}
+
+.card {
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 30%;
+    color: var(--gray);
+    margin-block-start: var(--gap);
+    transition: background-color var(--transition-timing), 
+                box-shadow var(--transition-timing),
+                transform var(--transition-timing);
+}
+
+.card:hover {
+    background-color: var(--hover-bg);
+    box-shadow: var(--hover-shadow);
+    transform: scale(var(--scale-hover));
+    color: var(--white);
+}
+
+
+.card-header{
+    background-color: var(--card-bg);
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--card-border-radius);
+    color: var(--black);
+    border: 1px solid var(--border-color);
+}
+
+.card-header p{
+    font-size: 32px;
+    font-weight: 800;
+    margin-block-start: 2rem;
+    color: var(--hover-bg);
+}
+
+
+.card-header h2{
+    font-weight: 800;
+    text-align: start;
+    margin-block-end: 0.5rem;
+}
+
+.card-header h4{
+    font-size: var(--body-text);
+    font-weight: 400;
+    text-align: start;
+    color: var(--gray);
+}
+
+
+
+.card-features {
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--card-border-radius);
+}
+
+
+.card-features h3{
+    font-size: var(--caption-text);
+    font-weight: 800;
+    text-align: start;
+    margin-block-end: 0.5rem;
+    margin-block-start: 2rem;
+}
+
+
+.icon-and-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    column-gap: var(--card-gap);
+    margin-block-end: 0.5rem;
+}
+
+.icon-and-text p{
+    font-size: var(--body-text);
+    font-weight: 400;
+    text-align: start;
+}
+
+.icon-and-text i{
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 3rem;
+    color: var(--hover-bg);
+}
+
+
+button{
+    width: 100%;
+    padding: 1rem;
+    margin-block-start: 3rem;
+    outline: none;
+    background-color: var(--white);
+    border: none;
+    border-radius: var(--card-border-radius);
+    border: 1px solid #d4390a;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--black);
+    font-weight: 600;
+}
+
+
+@media screen and (max-width:1024px) {
+
+
+    .plans {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        background-color: #f0f0f0;
+        column-gap: 2rem;
+        width: 100%;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+
+    .card {
+        width: 48%;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+
+
+    .plans {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        column-gap: 2rem;
+        width: 100%;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        margin-block-end: 3rem;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+}
+
+@media screen and (max-width:430px) {
+
+    main {
+        padding: 1rem;
+    }
+
+    .caption{
+        margin-block-start: 2rem;
+    }
+
+
+    .plans {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        column-gap: 2rem;
+        width: 100%;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+
+    .card {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .hero-text h2{
+        font-size: 24px;
+    }
+
+}
+
+@media screen and (max-width:390px) {
+
+    main {
+        padding: 1rem;
+    }
+
+    .caption{
+        margin-block-start: 2rem;
+    }
+
+
+    .plans {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+        column-gap: 2rem;
+        width: 100%;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+
+    .card {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .hero-text h2{
+        font-size: 20px;
+    }
+
+    .icon-and-text p{
+        font-size: 15px;
+        font-weight: 400;
+        text-align: start;
+    }
+
+}
